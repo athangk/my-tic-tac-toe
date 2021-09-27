@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.player-message-container{
+  height: 96px;
+}
+.tie-message-container{
+  height: 40px;
+}
+
+.grid {
+  display: flex;                      
+  flex-wrap: wrap;                    
+  justify-content: space-around;
+  width: 160px;
+  
+}
+.cell {
+  flex: 0 0 32%;    
+  height:50px; 
+  width:50px;                  
+  max-height:50px;
+  max-width:50px;
+  margin-bottom: 1px;
+  background-color:paleturquoise;
+  color:#980f98f5;
+  border: 1px solid black;
+  
+}
+.innerCell {
+  height:50px; 
+  width:50px;  
+  max-height:100%;
+  max-width:100%;
+  padding-top: 2px;
+}
+.markX{
+  color:blue
+}
+.markO {
+  color: red;
+}
+
+.new-game-container{
+  width: 100%;
+  height: 80px;
+}
+.newGameBtn{
+margin-top:50px;
+width:150px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
