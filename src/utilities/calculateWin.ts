@@ -1,6 +1,9 @@
 import { WIN_COMBINATION } from './Constants';
 
-const gameWon = (ticTacArray: string[] | null[]): boolean => {
+
+
+
+const gameWon = (ticTacArray: string[]): boolean => {
 	return WIN_COMBINATION.some((combination) => {
 		return combination.every(
 			(el) =>
@@ -10,9 +13,9 @@ const gameWon = (ticTacArray: string[] | null[]): boolean => {
 	});
 };
 
-const gameTie = (ticTacArray: string[]) => {
+const gameTie = (ticTacArray: string[]): boolean => {
 	return ticTacArray.every((el) => {
-		return el === 'X' || el === 'O';
+		return el != null;
 	});
 };
 
