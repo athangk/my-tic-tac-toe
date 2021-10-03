@@ -1,4 +1,4 @@
-import { WIN_COMBINATION } from './Constants';
+import { WIN_COMBINATION } from './constants';
 
 
 
