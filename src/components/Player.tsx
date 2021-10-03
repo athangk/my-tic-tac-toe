@@ -8,7 +8,7 @@ interface PlayerProps {
 
 export const Player: FC<PlayerProps> = (props) => {
 	return (
-		<div className="player-message-container">
+		<div className="status__message">
 			{!props.winner && <span>Player:</span>}
 			{props.winner && <span>Winner:</span>}
 			<span> {props.user} </span>

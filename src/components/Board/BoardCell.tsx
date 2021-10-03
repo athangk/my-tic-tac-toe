@@ -10,7 +10,7 @@ export const BoardCell: FC<BoardCellProps> = (props) => {
 	return (
 		<div className="cell">
 			<div
-				className={`innerCell noSelect mark${props.cellValue ? props.cellValue : 'None'}`}
+				className={`cell__inner cell--noSelect cell--mark-${props.cellValue ? props.cellValue : 'None'}`}
 				onClick={() => props.handleClick(props.num)}
 			>
 				{props.cellValue}

@@ -50,7 +50,7 @@ export const TicTacToe: FC = () => {
 		<>
 			<Player user={user} winner={winner} tie={tie} />
 			<Board ticTacArray={ticTacArray} handleClick={(e) => handleClick(e)} />
-			<button className="newGameBtn" onClick={newGame}>
+			<button className="btn__new-game" onClick={newGame}>
 				New Game
 			</button>
 		</>
