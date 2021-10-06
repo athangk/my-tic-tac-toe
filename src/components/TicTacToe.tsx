@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { gameWon, gameTie } from '../utilities/calculateWin';
-import { Board } from './Board/Board';
+import { Board } from './board/Board';
 import { Player } from './Player';
 
 export const TicTacToe: FC = () => {
@@ -47,12 +47,12 @@ export const TicTacToe: FC = () => {
 	};
 
 	return (
-		<>
+		<div className="tic-tac-toe__container">
 			<Player user={user} winner={winner} tie={tie} />
 			<Board ticTacArray={ticTacArray} handleClick={(e) => handleClick(e)} />
-			<button className="newGameBtn" onClick={newGame}>
+			<button className="btn__new-game" onClick={newGame}>
 				New Game
 			</button>
-		</>
+		</div>
 	);
 };
