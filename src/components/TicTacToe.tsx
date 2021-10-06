@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { gameWon, gameTie } from '../utilities/calculateWin';
-import { Board } from './board/Board';
+import { Board } from './Board/Board';
 import { Player } from './Player';
 
 export const TicTacToe: FC = () => {
