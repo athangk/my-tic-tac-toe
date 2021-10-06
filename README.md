@@ -10,8 +10,8 @@ In the project directory, run:
 ### `npm start`
 
 #### -Game Start
-![alt text](https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_tic_Tac1.PNG){:height="200" width="140"}
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_tic_Tac1.PNG" width="140" height="220">
 #### -Game Win
-![alt text](https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_2_tic_tac.PNG){:height="200" width="140"}
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_2_tic_tac.PNG" width="140" height="220">
 ### -Game Tie
-![alt text](https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_tic_tac3.PNG){:height="200" width="140"}
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_tic_tac3.PNG" width="140" height="220">
