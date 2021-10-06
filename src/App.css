@@ -39,27 +39,31 @@
   border: 1px solid black;
   
 }
-.innerCell {
+.cell__inner {
   height:50px; 
   width:50px;  
   max-height:100%;
   max-width:100%;
   padding-top: 6px;
 }
-.markX{
-  color:blue
+.mark-X{
+  color:rgb(16, 78, 87)
 }
-.markO {
-  color: red;
+.mark-O {
+  color: rgb(255, 0, 170);
 }
 
 .new-game-container{
   width: 100%;
   height: 80px;
 }
-.newGameBtn{
-margin-top:50px;
-width:150px;
+.btn__new-game{
+  margin-top: 50px;
+  width: 160px;
+  height: 40px;
+  background-color: orange;
+  color: white;
+  font-weight: 600;
 }
 
 .noselect {

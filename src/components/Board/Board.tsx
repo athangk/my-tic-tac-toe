@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, FC, useEffect, useState } from 'react';
-import { BoardCell } from './BoardCell';
+import { FC } from 'react';
+import  { BoardCell }  from './BoardCell';
 
 interface ChildProps {
 	ticTacArray: string[] | null[];
