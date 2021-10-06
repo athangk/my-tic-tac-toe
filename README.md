@@ -9,9 +9,9 @@ In the project directory, run:
 ### `npm install`
 ### `npm start`
 
-### -Start
+#### -Game Start
 ![alt text](https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_tic_Tac1.PNG)
-### -Win
+#### -Game Win
 ![alt text](https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_2_tic_tac.PNG)
-### -Tie
+### -Game Tie
 ![alt text](https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_tic_tac3.PNG)
