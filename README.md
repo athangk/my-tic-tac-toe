@@ -1,6 +1,6 @@
 # Simple tic tac toe with react
 
-A simple tic tac toe with react hook, typescript and automation tests included.
+A simple tic tac toe with react hook, typescript and automation tests.
 
 
 ## Available Scripts
