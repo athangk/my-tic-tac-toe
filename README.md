@@ -1,6 +1,7 @@
 # Simple tic tac toe with react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple tic tac toe with react hook, typescript and automation tests included.
+
 
 ## Available Scripts
 
