@@ -8,11 +8,12 @@ interface PlayerProps {
 
 export const Player: FC<PlayerProps> = (props) => {
 	return (
+	
 		<div className="player-message-container">
-			{!props.winner && <span>Player:{props.user}</span>}
-			{props.winner && <span className="winner__label">Winner: {props.user}</span>}
+			{!props.winner && <span className="player-label">Player:{props.user}</span>}
+			{props.winner && <span className="player-label winner">Winner: {props.user}</span>}
 			
-			{props.tie && <div>Its a tie!</div>}
+			{props.tie && <div className="tie">Its a tie!</div>}
 		</div>
 	);
 };
