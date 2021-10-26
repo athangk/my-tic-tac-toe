@@ -11,8 +11,8 @@ In the project directory, run:
 ### `npm start`
 
 #### -Game Start
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture1.PNG">
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture1.JPG">
 #### -Game Win
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture2_Resized.png">
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture2_Resized.JPG">
 ### -Game Tie
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture3_Resized.png">
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture3_Resized.JPG">
