@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>I am here</div>
        <TicTacToe/>
       </header>
     </div>
