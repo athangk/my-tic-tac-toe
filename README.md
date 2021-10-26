@@ -12,7 +12,9 @@ In the project directory, run:
 
 #### -Game Start
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_1.JPG">
+
 #### -Game Win
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture2_Resized.JPG">
+
 ### -Game Tie
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture3_Resized.JPG">
