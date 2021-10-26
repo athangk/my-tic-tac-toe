@@ -8,9 +8,9 @@ test('cell value O player', () => {
 	const handleClick = jest.fn()
 
   const { container } = render(<BoardCell handleClick={handleClick} cellValue={'O'} num={1}/>)
-  const clicker=container.getElementsByClassName('cell__inner')[0];
+  const clicker=container.querySelectorAll('.cell__inner')[0];
 
-  screen.debug();
+
 
   fireEvent.click(clicker)
 
@@ -24,7 +24,7 @@ test('cell value X player', () => {
   const { container } = render(<BoardCell handleClick={handleClick} cellValue={'X'} num={1}/>)
   const clicker=container.getElementsByClassName('cell__inner')[0];
 
-  screen.debug();
+
 
   fireEvent.click(clicker)
 

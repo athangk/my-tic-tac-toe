@@ -6,12 +6,12 @@ test('Winner is O', () => {
 
   const { container } = render(<App/>)
 
-  const turn1=container.getElementsByClassName('cell__inner')[0];
-  const turn2=container.getElementsByClassName('cell__inner')[3];
-  const turn3=container.getElementsByClassName('cell__inner')[2];
-  const turn4=container.getElementsByClassName('cell__inner')[4];
-  const turn5=container.getElementsByClassName('cell__inner')[8];
-  const turn6=container.getElementsByClassName('cell__inner')[5];
+  const turn1=container.querySelectorAll('.cell__inner')[0];
+  const turn2=container.querySelectorAll('.cell__inner')[3];
+  const turn3=container.querySelectorAll('.cell__inner')[2];
+  const turn4=container.querySelectorAll('.cell__inner')[4];
+  const turn5=container.querySelectorAll('.cell__inner')[8];
+  const turn6=container.querySelectorAll('.cell__inner')[5];
  
   fireEvent.click(turn1)
   fireEvent.click(turn2)
@@ -22,8 +22,8 @@ test('Winner is O', () => {
 
   const linkElement = screen.getByText(/Winner: O/i);
   expect(linkElement).toBeInTheDocument();
-  screen.debug();
-
+  
+  
 
 });
 
@@ -32,12 +32,12 @@ test('Winner is X', () => {
 
   const { container } = render(<App/>)
 
-  const turn1=container.getElementsByClassName('cell__inner')[3];
-  const turn2=container.getElementsByClassName('cell__inner')[0];
-  const turn3=container.getElementsByClassName('cell__inner')[4];
-  const turn4=container.getElementsByClassName('cell__inner')[2];
-  const turn5=container.getElementsByClassName('cell__inner')[5];
-  const turn6=container.getElementsByClassName('cell__inner')[8];
+  const turn1=container.querySelectorAll('.cell__inner')[3];
+  const turn2=container.querySelectorAll('.cell__inner')[0];
+  const turn3=container.querySelectorAll('.cell__inner')[4];
+  const turn4=container.querySelectorAll('.cell__inner')[2];
+  const turn5=container.querySelectorAll('.cell__inner')[5];
+  const turn6=container.querySelectorAll('.cell__inner')[8];
  
   fireEvent.click(turn1)
   fireEvent.click(turn2)
@@ -48,7 +48,7 @@ test('Winner is X', () => {
 
   const linkElement = screen.getByText(/Winner: X/i);
   expect(linkElement).toBeInTheDocument();
-  screen.debug();
+
 
 
 });
@@ -60,15 +60,15 @@ test('Its a tie', () => {
 
   const { container } = render(<App/>)
 
-  const turn1=container.getElementsByClassName('cell__inner')[1];
-  const turn2=container.getElementsByClassName('cell__inner')[0];
-  const turn3=container.getElementsByClassName('cell__inner')[3];
-  const turn4=container.getElementsByClassName('cell__inner')[2];
-  const turn5=container.getElementsByClassName('cell__inner')[4];
-  const turn6=container.getElementsByClassName('cell__inner')[5];
-  const turn7=container.getElementsByClassName('cell__inner')[8];
-  const turn8=container.getElementsByClassName('cell__inner')[7];
-  const turn9=container.getElementsByClassName('cell__inner')[6];
+  const turn1=container.querySelectorAll('.cell__inner')[1];
+  const turn2=container.querySelectorAll('.cell__inner')[0];
+  const turn3=container.querySelectorAll('.cell__inner')[3];
+  const turn4=container.querySelectorAll('.cell__inner')[2];
+  const turn5=container.querySelectorAll('.cell__inner')[4];
+  const turn6=container.querySelectorAll('.cell__inner')[5];
+  const turn7=container.querySelectorAll('.cell__inner')[8];
+  const turn8=container.querySelectorAll('.cell__inner')[7];
+  const turn9=container.querySelectorAll('.cell__inner')[6];
  
   fireEvent.click(turn1)
   fireEvent.click(turn2)
@@ -82,7 +82,7 @@ test('Its a tie', () => {
 
   const linkElement = screen.getByText(/Its a tie!/i);
   expect(linkElement).toBeInTheDocument();
-  screen.debug();
+
 
 
 });

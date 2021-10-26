@@ -1,6 +1,5 @@
 
 import { render, screen } from '@testing-library/react';
-import App from '../App';
 import { Board } from '../components/board/Board';
 
 test('Board screen debug', () => {
