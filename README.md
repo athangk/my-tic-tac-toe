@@ -10,11 +10,9 @@ In the project directory, run:
 ### `npm install`
 ### `npm start`
 
-#### -Game Start
+#### -Game Start - Win - Tie
+<p float=left>
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_1.JPG">
-
-#### -Game Win
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture2_Resized.JPG">
-
-### -Game Tie
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture3_Resized.JPG">
+  </p>
