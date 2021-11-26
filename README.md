@@ -1,4 +1,4 @@
-# Simple tic tac toe with react
+# my-tic-tac-toe-ReactJS
 
 A simple tic tac toe with react hook, typescript and automation tests.
 
