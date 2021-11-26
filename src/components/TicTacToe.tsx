@@ -1,58 +1,58 @@
-import { FC, useState } from 'react';
-import { gameWon, gameTie } from '../utilities/calculateWin';
-import { Board } from './board/Board';
-import { Player } from './Player';
+import { useState } from "react"
+import { Board } from "./board/Board"
+import { Player } from "./Player"
+import { gameWon, gameTie } from "../utilities/calculate-game-status"
 
-export const TicTacToe: FC = () => {
-	const [user, setUser] = useState<string>('X');
-	const [ticTacArray, setTicTacArray] = useState<string[]>(Array(9).fill(null));
-	const [winner, setWinner] = useState<string | null>(null);
-	const [tie, setTie] = useState<boolean>(false);
+export const TicTacToe = () => {
+  const [user, setUser] = useState<string>("X")
+  const [ticTacArray, setTicTacArray] = useState<string[]>(Array(9).fill(null))
+  const [winner, setWinner] = useState<string | null>(null)
+  const [tie, setTie] = useState<boolean>(false)
 
-	const handleClick = (num: number) => {
-		// cell has value, or a win is made
-		if (ticTacArray[num] || winner) {
-			return;
-		}
+  const handleClick = (num: number) => {
+    // cell has value, or a win is made
+    if (ticTacArray[num] || winner) {
+      return
+    }
 
-		// update tictactoe array
-		let sliceTicTac = ticTacArray.slice();
-		sliceTicTac[num] = user;
-		setTicTacArray(sliceTicTac);
+    // update ticktacktoe array
+    const sliceTicTac = ticTacArray.slice()
+    sliceTicTac[num] = user
+    setTicTacArray(sliceTicTac)
 
-		// check win
-		let isWon = gameWon(sliceTicTac);
-		if (isWon) {
-			setWinner(user);
-			return;
-		}
+    // check win
+    const isWon = gameWon(sliceTicTac)
+    if (isWon) {
+      setWinner(user)
+      return
+    }
 
-		// check draw
-		let isTie = gameTie(sliceTicTac);
-		if (isTie) {
-			setTie(isTie);
-			return;
-		}
+    // check draw
+    const isTie = gameTie(sliceTicTac)
+    if (isTie) {
+      setTie(isTie)
+      return
+    }
 
-		//change user
-		let currentUser = user === 'X' ? 'O' : 'X';
-		setUser(currentUser);
-	};
+    //change user
+    const currentUser = user === "X" ? "O" : "X"
+    setUser(currentUser)
+  }
 
-	const newGame = () => {
-		setTicTacArray(Array(9).fill(null));
-		setUser('X');
-		setWinner(null);
-		setTie(false);
-	};
+  const newGame = () => {
+    setTicTacArray(Array(9).fill(null))
+    setUser("X")
+    setWinner(null)
+    setTie(false)
+  }
 
-	return (
-		<div className="tic-tac-toe__container">
-			<Player user={user} winner={winner} tie={tie} />
-			<Board ticTacArray={ticTacArray} handleClick={(e) => handleClick(e)} />
-			<button className="btn__new-game" onClick={newGame}>
-				New Game
-			</button>
-		</div>
-	);
-};
+  return (
+    <div className="tic-tac-toe__container">
+      <Player user={user} winner={winner} tie={tie} />
+      <Board ticTacArray={ticTacArray} handleClick={(e) => handleClick(e)} />
+      <button className="btn__new-game" onClick={newGame}>
+        New Game
+      </button>
+    </div>
+  )
+}

@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react"
 
-import './App.css';
-import {TicTacToe}  from './components/TicTacToe';
+import "./App.css"
+import { TicTacToe } from "./components/TicTacToe"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <TicTacToe/>
-      </header>
-    </div>
-  );
+    <main className="App">
+      <section className="app-section">
+        <TicTacToe />
+      </section>
+    </main>
+  )
 }
 
-export default App;
+export default App

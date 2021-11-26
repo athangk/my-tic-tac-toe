@@ -1,24 +1,18 @@
-import { FC } from 'react';
-import  { BoardCell }  from './BoardCell';
+import { BoardCell } from "./BoardCell"
 
-interface ChildProps {
-	ticTacArray: string[] | null[];
-	handleClick: (num: number) => void;
+interface BoardProps {
+  ticTacArray: string[] | null[]
+  handleClick: (num: number) => void
 }
 
-export const Board: FC<ChildProps> = (props) => {
-	return (
-		<>
-			<div className="grid">
-				{props.ticTacArray.map((_, i) => (
-					<BoardCell
-						key={i}
-						num={i}
-						handleClick={() => props.handleClick(i)}
-						cellValue={props.ticTacArray[i]}
-					/>
-				))}
-			</div>
-		</>
-	);
-};
+export const Board = ({ ticTacArray, handleClick }: BoardProps) => {
+  return (
+    <>
+      <div className="grid">
+        {ticTacArray.map((_, i) => (
+          <BoardCell key={i} num={i} handleClick={() => handleClick(i)} cellValue={ticTacArray[i]} />
+        ))}
+      </div>
+    </>
+  )
+}
