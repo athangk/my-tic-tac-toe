@@ -1,13 +1,13 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
-import {BoardCell} from '../components/board/BoardCell'
+import {Cell} from '../components/board/Cell'
 
 
 
 test('cell value O player', () => {
 	const handleClick = jest.fn()
 
-  const { container } = render(<BoardCell handleClick={handleClick} cellValue={'O'} num={1}/>)
+  const { container } = render(<Cell handleClick={handleClick} cellValue={'O'} num={1}/>)
   const clicker=container.querySelectorAll('.cell__inner')[0];
 
 
@@ -21,7 +21,7 @@ test('cell value O player', () => {
 test('cell value X player', () => {
 	const handleClick = jest.fn()
 
-  const { container } = render(<BoardCell handleClick={handleClick} cellValue={'X'} num={1}/>)
+  const { container } = render(<Cell handleClick={handleClick} cellValue={'X'} num={1}/>)
   const clicker=container.getElementsByClassName('cell__inner')[0];
 
 

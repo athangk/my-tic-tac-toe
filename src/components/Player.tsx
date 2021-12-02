@@ -1,19 +1,26 @@
+import { STATUS_TIE } from "../utilities/constants"
+import { GameText } from "../utilities/locale"
+
 interface PlayerProps {
   user: string
   winner: string | null
-  tie: boolean
+  status: string | null
 }
 
-export const Player = ({ user, winner, tie }: PlayerProps) => {
+export const Player = ({ user, winner, status }: PlayerProps) => {
   return (
     <div className="player-message-container">
       {!winner ? (
-        <span className="player-label">Player:{user}</span>
+        <span className="player-label">
+          {GameText.player}:{user}
+        </span>
       ) : (
-        <span className="player-label winner">Winner: {user}</span>
+        <span className="player-label winner">
+          {GameText.winner}:{user}
+        </span>
       )}
 
-      {tie && <div className="tie">Its a tie!</div>}
+      {status === STATUS_TIE && <div className="tie">{GameText.tie}</div>}
     </div>
   )
 }

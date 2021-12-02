@@ -1,5 +1,5 @@
 describe("e2e", () => {
-  it("user wins", () => {
+  it("user X wins", () => {
 
     cy.visit('http://localhost:3000/')
     
