@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react"
 import { Board } from "./board/Board"
 import { Player } from "./Player"
-import { winCells, gameTie } from "../utilities/calculate-game-status"
+import { winCells, gameTie, winMove, undefeatedMove } from "../utilities/calculate-game-status"
 import { STATUS_START, STATUS_PLAYING, STATUS_TIE, X_MARK, O_MARK } from "../utilities/constants"
 import { GameText } from "../utilities/locale"
 
 export const TicTacToe = () => {
   const [user, setUser] = useState<string>("X")
-  const [ticTacArray, setTicTacArray] = useState<string[]>(Array(9).fill(null))
+  const [ticTacArray, setTicTacArray] = useState<(string | null)[]>(Array(9).fill(null))
   const [winner, setWinner] = useState<string | null>(null)
   const [status, setStatus] = useState<string | null>(STATUS_START)
-  const [winningCells, setWinningCells] = useState<number[]>(Array(3).fill(null))
+  const [winningCells, setWinningCells] = useState<(number | null)[]>(Array(3).fill(null))
+  const [aheadCells, setAheadCells] = useState<(number | null)[]>(Array(3).fill(null))
+  const [avoidCells, setAvoidCells] = useState<(number | null)[]>(Array(3).fill(null))
 
   const updateArray = (num: number) => {
     setTicTacArray(prevState => prevState.map((item, index) => (index === num ? user : item)))
@@ -25,6 +27,7 @@ export const TicTacToe = () => {
 
   const checkGameStatus = () => {
     const winningCellsList = winCells(ticTacArray)
+
     if (winningCellsList?.length === 3) {
       setWinningCells(winningCellsList)
       setWinner(user)
@@ -42,11 +45,30 @@ export const TicTacToe = () => {
   const toggleCurrentUser = () => {
     const currentUser = user === X_MARK ? O_MARK : X_MARK
     setUser(currentUser)
+    hints(currentUser)
+  }
+
+  const hints = (currentUser: string) => {
+    console.log("whats the user ? ", currentUser)
+    const currentArray = [...ticTacArray]
+    const aheadCellsList = winMove(currentArray, currentUser) as (number | null)[]
+    setAheadCells(aheadCellsList)
+    console.log("aheadCellsList", aheadCellsList)
+    if (aheadCellsList.length === 0) {
+      const aheadAvoidList = undefeatedMove(currentArray, currentUser) as (number | null)[]
+      console.log("aheadAvoidList1", aheadAvoidList)
+      if (aheadAvoidList.length > 2) {
+        console.log("aheadAvoidList2", aheadAvoidList)
+        setAvoidCells(aheadAvoidList)
+      }
+    }
   }
 
   const newGame = () => {
     setTicTacArray(Array(9).fill(null))
     setWinningCells(Array(3).fill(null))
+    setAheadCells(Array(3).fill(null))
+    setAvoidCells(Array(3).fill(null))
     setUser("X")
     setWinner(null)
     setStatus(null)
@@ -64,7 +86,13 @@ export const TicTacToe = () => {
   return (
     <div className="tic-tac-toe__container">
       <Player user={user} winner={winner} status={status} />
-      <Board ticTacArray={ticTacArray} handleClick={e => handleClick(e)} winningCells={winningCells} />
+      <Board
+        ticTacArray={ticTacArray}
+        handleClick={e => handleClick(e)}
+        winningCells={winningCells}
+        aheadCells={aheadCells}
+        avoidCells={avoidCells}
+      />
       <button className="btn__new-game" onClick={newGame}>
         {GameText.new_game}
       </button>

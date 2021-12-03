@@ -1,12 +1,14 @@
 import { Cell } from "./Cell"
 
 interface BoardProps {
-  ticTacArray: string[] | null[]
-  winningCells: number[]
+  ticTacArray: (string | null)[]
+  winningCells: (number | null)[]
+  aheadCells: (number | null)[]
+  avoidCells: (number | null)[]
   handleClick: (num: number) => void
 }
 
-export const Board = ({ ticTacArray, winningCells, handleClick }: BoardProps) => {
+export const Board = ({ ticTacArray, winningCells, aheadCells, avoidCells, handleClick }: BoardProps) => {
   return (
     <>
       <div className="grid">
@@ -17,6 +19,8 @@ export const Board = ({ ticTacArray, winningCells, handleClick }: BoardProps) =>
             handleClick={() => handleClick(i)}
             cellValue={ticTacArray[i]}
             winningCell={winningCells.includes(i) ? true : false}
+            aheadCell={aheadCells.includes(i) ? true : false}
+            avoidCell={avoidCells.includes(i) ? true : false}
           />
         ))}
       </div>
