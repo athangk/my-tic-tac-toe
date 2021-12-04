@@ -46,33 +46,36 @@ const winMove = (ticTacArray: (string | null)[], user: string) => {
  * @returns e.x. [1,3,6]
  */
 const undefeatedMove = (ticTacArray: (string | null)[], user: string) => {
+  const tempTicTacArray = [...ticTacArray]
   const currentArray = ticTacArray?.map((item, index) => {
     let result = null
     if (ticTacArray[index] == null) {
       ticTacArray[index] = user
+      console.log("first run", index, item)
+      for (let i = 0; i < tempTicTacArray.length; i++) {
+        if (tempTicTacArray[i] == null && i != index) {
+          console.log("second run", i, tempTicTacArray[i])
+          tempTicTacArray[i] = user === X_MARK ? O_MARK : X_MARK
+          result = winCells(tempTicTacArray)
+          tempTicTacArray[i] = null
+          console.log(" the wincell result ", result, tempTicTacArray)
 
-      for (let i = 0; i < ticTacArray.length; i++) {
-        if (ticTacArray[i] == null && i != index) {
-          ticTacArray[i] = user === X_MARK ? O_MARK : X_MARK
-          result = winCells(ticTacArray)
           if (result && result?.length >= 2) {
             console.log("result1", result)
-            ticTacArray[i] = null
+
             return result
           }
         }
       }
 
-      ticTacArray[index] = null
+      ticTacArray[index] = item
       console.log("result2", result)
-      return result
-    } else {
-      return null
+      return item
     }
   })
 
   const resultAvoidList = currentArray.filter(el => el != null).flat()
-
+  console.log("resultAvoidList", resultAvoidList)
   return resultAvoidList ? resultAvoidList : []
 }
 
