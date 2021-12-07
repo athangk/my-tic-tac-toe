@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Cell } from "./Cell"
 
 interface BoardProps {
@@ -9,9 +10,16 @@ interface BoardProps {
 }
 
 export const Board = ({ ticTacArray, winningCells, aheadCells, avoidCells, handleClick }: BoardProps) => {
+  const [perspectiveOn, setPerspectiveOn] = useState(false)
+
+  const togglePerspective = () => {
+    console.log("mouse is on")
+    setPerspectiveOn(perspectiveOn => !perspectiveOn)
+  }
+
   return (
     <>
-      <div className="grid">
+      <div className={`grid ${perspectiveOn && "cell-is-spinning"}`} onMouseEnter={togglePerspective}>
         {ticTacArray.map((_, i) => (
           <Cell
             key={i}
