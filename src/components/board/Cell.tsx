@@ -1,5 +1,9 @@
 import { useState } from "react"
 
+import FlashOffOutlinedIcon from "@mui/icons-material/FlashOffOutlined"
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
+import { X_MARK } from "../../utilities/constants"
+
 interface CellProps {
   num: number
   cellValue: string | null
@@ -43,7 +47,9 @@ export const Cell = ({ num, cellValue, winningCell, aheadCell, avoidCell, handle
         <div className="scene scene--card_mark">
           <div className={`card_mark ${flipped && "is-flipped"}`}>
             <div className="card_mark__face card_mark__face--front"></div>
-            <div className="card_mark__face card_mark__face--back">{cellValue}</div>
+            <div className={`card_mark__face card_mark__face--back ${cellValue && "mark-" + cellValue}`}>
+              {cellValue === X_MARK ? <FlashOffOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
+            </div>
           </div>
         </div>
       </div>

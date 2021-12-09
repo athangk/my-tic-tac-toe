@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import Button from "@mui/material/Button"
+
 import { Board } from "./board/Board"
 import { Player } from "./Player"
 import { winCells, gameTie, winMove, undefeatedMove } from "../utilities/calculate-game-status"
@@ -93,9 +95,15 @@ export const TicTacToe = () => {
         aheadCells={aheadCells}
         avoidCells={avoidCells}
       />
-      <button className="btn__new-game" onClick={newGame}>
-        {GameText.new_game}
-      </button>
+      <div className="btn__new-game">
+        <Button variant="outlined" onClick={newGame}>
+          {GameText.new_game}
+        </Button>
+      </div>
+
+      {/* <button  >
+      
+      </button> */}
     </div>
   )
 }

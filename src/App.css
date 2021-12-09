@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Roboto", sans-serif !important;
 }
 .app-section {
   /* background-color: #282c34; */
@@ -10,7 +11,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background: linear-gradient(270deg, #102b45, #0b1c2d, #130b16);
+  background: linear-gradient(270deg, #102b45, #0f243a, #27162c);
   background-size: 600% 600%;
 
   /* -webkit-animation: AnimationName 180s ease infinite;
@@ -18,45 +19,61 @@
   animation: AnimationName 180s ease infinite; */
 }
 
-
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-
-.player-message-container{
+.player-message-container {
   height: 96px;
 }
-.tie-message-container{
+.tie-message-container {
   height: 40px;
 }
-
 
 .player-label {
   display: block;
   padding: 10px;
   width: 138px;
-  background: #3b4e5d;
+  border-radius: 8px;
+  color: #57c8e5;
 }
 .winner {
-  background: #217935;
+  /* background: #217935; */
 }
 
 .tie {
   display: block;
-  background: #702179;
+  color: #702179;
   margin-bottom: 40px;
   font-size: 16px;
   font-style: italic;
@@ -65,33 +82,30 @@
 }
 
 .grid {
-  display: flex;                      
-  flex-wrap: wrap;                    
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   width: 160px;
-  
 }
 .cell {
-  flex: 0 0 32%;    
-  height:50px; 
-  width:50px;                  
-  max-height:50px;
-  max-width:50px;
+  flex: 0 0 32%;
+  height: 50px;
+  width: 50px;
+  max-height: 50px;
+  max-width: 50px;
   margin-bottom: 1px;
-  
-  color:#980f98f5;
-  border:1px solid #09123e7d;
-  
+
+  color: #980f98f5;
+  border: 1px solid #a25aaf0f;
 }
 .cell__inner {
-  height:50px; 
-  width:50px;  
-  max-height:100%;
-  max-width:100%;
-
+  height: 50px;
+  width: 50px;
+  max-height: 100%;
+  max-width: 100%;
 }
-.mark-X{
-  color:rgb(16, 78, 87)
+.mark-X {
+  color: rgb(16, 78, 87);
 }
 .mark-O {
   color: rgb(255, 0, 170);
@@ -103,50 +117,48 @@
 }
 
 .avoidMove {
-  background-color: rgba(255, 68, 0, 0.384) !important;
+  animation: avoidMove 2s ease-in-out;
+  /* background-color: rgba(255, 68, 0, 0.384) !important; */
+  background-color: transparent;
   color: white;
 }
 
 .aheadMove {
-  background-color: rgba(81, 255, 0, 0.445) !important;
+  animation: aheadMove 2s ease-in-out;
+  /* background-color: rgba(81, 255, 0, 0.445) !important; */
+  background-color: transparent;
   color: white;
 }
 
 .small-message-win {
-  font-size:16px;
-  background-color:green;
+  font-size: 16px;
+  background-color: green;
 }
 
 .small-message-loose {
-  font-size:16px;
-  background-color:red;
+  font-size: 16px;
+  background-color: red;
 }
 
-.new-game-container{
+.new-game-container {
   width: 100%;
   height: 80px;
 }
-.btn__new-game{
-  margin-top: 50px;
+.btn__new-game {
   width: 160px;
-  height: 40px;
-  background-color: orange;
-  color: white;
-  font-weight: 600;
+
+  margin-top: 40px;
 }
 
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-
-
-
 
 .card_mark {
   width: 100%;
@@ -168,7 +180,6 @@
   /* line-height: 260px; */
   color: white;
   text-align: center;
-  font-weight: bold;
   /* font-size: 40px; */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -182,24 +193,64 @@
 }
 
 .card_mark__face--back {
-  background: #0f98a8;
   transform: rotateY(180deg);
 }
 
+.card_mark__face--back.mark-X {
+  background: #a80f7e;
+}
+.card_mark__face--back.mark-O {
+  background: #0f9fa8;
+}
+
 .scene {
-  height:50px; 
-  width:50px;  
-  max-height:100%;
-  max-width:100%;
+  height: 50px;
+  width: 50px;
+  max-height: 100%;
+  max-width: 100%;
   perspective: 600px;
 }
 
 .cell-is-spinning {
-  animation: spinCube 8s ease-in-out;
-
+  /* animation: spinCube 8s ease-in-out; */
 }
 
 @keyframes spinCube {
-    0% { transform: translateZ(-100px) rotateX(  0deg) rotateY(  0deg); }
-  100% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg); }
+  0% {
+    transform: translateZ(-100px) rotateX(0deg) rotateY(0deg);
+  }
+  40% {
+    transform: translateZ(-100px) rotateX(10deg) rotateY(15deg);
+  }
+  80% {
+    transform: translateZ(-100px) rotateX(-10deg) rotateY(-15deg);
+  }
+  100% {
+    transform: translateZ(-100px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes aheadMove {
+  0% {
+    background-color: transparent;
+  }
+  80% {
+    background-color: green;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes avoidMove {
+  0% {
+    background-color: transparent;
+  }
+
+  80% {
+    background-color: red;
+  }
+  100% {
+    background-color: transparent;
+  }
 }

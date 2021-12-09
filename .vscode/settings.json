@@ -5,6 +5,9 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true,
     "prettier.arrowParens": "avoid",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
    
       
 }
