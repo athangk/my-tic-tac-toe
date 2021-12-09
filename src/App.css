@@ -11,12 +11,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background: linear-gradient(270deg, #102b45, #0f243a, #27162c);
+  background: linear-gradient(270deg, #102b45, #0d1e31, #27162c);
   background-size: 600% 600%;
 
-  /* -webkit-animation: AnimationName 180s ease infinite;
+  -webkit-animation: AnimationName 180s ease infinite;
   -moz-animation: AnimationName 180s ease infinite;
-  animation: AnimationName 180s ease infinite; */
+  animation: AnimationName 180s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
@@ -112,7 +112,8 @@
 }
 
 .winCell {
-  background-color: green !important;
+  animation: winMove 2s forwards;
+  background-color: transparent;
   color: white;
 }
 
@@ -189,7 +190,7 @@
 }
 
 .card_mark__face--front {
-  /* background: #0a1211; */
+  background: #0f9fa81a;
 }
 
 .card_mark__face--back {
@@ -252,5 +253,14 @@
   }
   100% {
     background-color: transparent;
+  }
+}
+
+@keyframes winMove {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: green;
   }
 }

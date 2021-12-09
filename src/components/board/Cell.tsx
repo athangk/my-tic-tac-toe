@@ -38,7 +38,7 @@ export const Cell = ({ num, cellValue, winningCell, aheadCell, avoidCell, handle
   return (
     <div className="cell">
       <div
-        className={`cell__inner no-select ${cellValue && "mark-" + cellValue} ${winningCell && "winCell"} 
+        className={`cell__inner no-select ${cellValue && "mark-" + cellValue}  
         ${aheadable && "aheadMove"} ${avoidable && "avoidMove"} `}
         onClick={() => {
           handleCardClick(num)
@@ -47,7 +47,11 @@ export const Cell = ({ num, cellValue, winningCell, aheadCell, avoidCell, handle
         <div className="scene scene--card_mark">
           <div className={`card_mark ${flipped && "is-flipped"}`}>
             <div className="card_mark__face card_mark__face--front"></div>
-            <div className={`card_mark__face card_mark__face--back ${cellValue && "mark-" + cellValue}`}>
+            <div
+              className={`card_mark__face card_mark__face--back ${cellValue && "mark-" + cellValue} ${
+                winningCell && "winCell"
+              }`}
+            >
               {cellValue === X_MARK ? <FlashOffOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
             </div>
           </div>
