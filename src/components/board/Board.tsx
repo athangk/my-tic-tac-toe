@@ -5,7 +5,7 @@ interface BoardProps {
   handleClick: (num: number) => void
 }
 
-export const Board = ({ ticTacArray, handleClick }: BoardProps) => {
+export function Board({ ticTacArray, handleClick }: BoardProps) {
   return (
     <>
       <div className="grid">

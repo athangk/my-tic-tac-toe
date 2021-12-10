@@ -4,7 +4,7 @@ interface PlayerProps {
   tie: boolean
 }
 
-export const Player = ({ user, winner, tie }: PlayerProps) => {
+export function Player({ user, winner, tie }: PlayerProps) {
   return (
     <div className="player-message-container">
       {!winner ? (

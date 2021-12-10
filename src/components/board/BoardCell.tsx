@@ -4,11 +4,11 @@ interface BoardCellProps {
   handleClick: (num: number) => void
 }
 
-export const BoardCell = ({ num, cellValue, handleClick }: BoardCellProps) => {
+export function BoardCell({ num, cellValue, handleClick }: BoardCellProps) {
   return (
     <div className="cell">
       <div
-        className={`cell__inner no-select ${cellValue && "mark-" + cellValue}`}
+        className={`cell__inner no-select ${cellValue ? "mark-" + cellValue : "mark-none"}`}
         onClick={() => handleClick(num)}
       >
         {cellValue}
