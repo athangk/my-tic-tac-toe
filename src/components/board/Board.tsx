@@ -9,7 +9,7 @@ interface BoardProps {
   handleClick: (num: number) => void
 }
 
-export const Board = ({ ticTacArray, winningCells, aheadCells, avoidCells, handleClick }: BoardProps) => {
+export function Board({ ticTacArray, winningCells, aheadCells, avoidCells, handleClick }: BoardProps) {
   const [perspectiveOn, setPerspectiveOn] = useState(false)
 
   const togglePerspective = () => {

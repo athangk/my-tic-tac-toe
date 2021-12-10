@@ -7,7 +7,7 @@ interface PlayerProps {
   status: string | null
 }
 
-export const Player = ({ user, winner, status }: PlayerProps) => {
+export function Player({ user, winner, status }: PlayerProps) {
   return (
     <div className="player-message-container">
       {!winner ? (

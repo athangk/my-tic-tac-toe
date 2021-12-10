@@ -7,7 +7,7 @@ import { winCells, gameTie, winMove, undefeatedMove } from "../utilities/calcula
 import { STATUS_START, STATUS_PLAYING, STATUS_TIE, X_MARK, O_MARK } from "../utilities/constants"
 import { GameText } from "../utilities/locale"
 
-export const TicTacToe = () => {
+export function TicTacToe() {
   const [user, setUser] = useState<string>("X")
   const [ticTacArray, setTicTacArray] = useState<(string | null)[]>(Array(9).fill(null))
   const [winner, setWinner] = useState<string | null>(null)

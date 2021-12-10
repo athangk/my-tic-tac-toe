@@ -51,31 +51,24 @@ const undefeatedMove = (ticTacArray: (string | null)[], user: string) => {
     let result = null
     if (ticTacArray[index] == null) {
       ticTacArray[index] = user
-      console.log("first run", index, item)
       for (let i = 0; i < tempTicTacArray.length; i++) {
         if (tempTicTacArray[i] == null && i != index) {
-          console.log("second run", i, tempTicTacArray[i])
           tempTicTacArray[i] = user === X_MARK ? O_MARK : X_MARK
           result = winCells(tempTicTacArray)
           tempTicTacArray[i] = null
-          console.log(" the wincell result ", result, tempTicTacArray)
 
           if (result && result?.length >= 2) {
-            console.log("result1", result)
-
             return result
           }
         }
       }
 
       ticTacArray[index] = item
-      console.log("result2", result)
       return item
     }
   })
 
   const resultAvoidList = currentArray.filter(el => el != null).flat()
-  console.log("resultAvoidList", resultAvoidList)
   return resultAvoidList ? resultAvoidList : []
 }
 

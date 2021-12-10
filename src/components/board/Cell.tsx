@@ -13,22 +13,10 @@ interface CellProps {
   handleClick: (num: number) => void
 }
 
-export const Cell = ({ num, cellValue, winningCell, aheadCell, avoidCell, handleClick }: CellProps) => {
+export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, handleClick }: CellProps) {
   const aheadable = aheadCell && !cellValue
   const avoidable = !aheadCell && avoidCell && !cellValue
   const [flipped, setFlipped] = useState(false)
-
-  // return (
-  //   <div className="cell">
-  //     <div
-  //       className={`cell__inner no-select ${cellValue && "mark-" + cellValue} ${winningCell && "winCell"}
-  //       ${aheadable && "aheadMove"} ${avoidable && "avoidMove"}`}
-  //       onClick={() => handleClick(num)}
-  //     >
-  //       {cellValue}
-  //     </div>
-  //   </div>
-  // )
 
   const handleCardClick = (num: number) => {
     setFlipped(true)
