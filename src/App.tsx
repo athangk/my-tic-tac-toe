@@ -1,7 +1,5 @@
-import React from "react"
-
 import "./App.css"
-import { TicTacToe } from "./components/TicTacToe"
+import TicTacToe from "./components/TicTacToe"
 
 function App() {
   return (

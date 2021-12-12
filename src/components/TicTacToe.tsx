@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Board } from "./board/Board"
-import { Player } from "./Player"
+import Board from "./board/Board"
+import Player from "./Player"
 import { gameWon, gameTie } from "../utilities/calculate-game-status"
 import { O_MARK, X_MARK } from "../utilities/constants"
 
-export function TicTacToe() {
+function TicTacToe() {
   const [user, setUser] = useState<string>("X")
   const [ticTacArray, setTicTacArray] = useState<string[]>(Array(9).fill(null))
   const [winner, setWinner] = useState<string | null>(null)
@@ -57,3 +57,5 @@ export function TicTacToe() {
     </div>
   )
 }
+
+export default TicTacToe

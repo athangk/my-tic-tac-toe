@@ -4,7 +4,7 @@ interface PlayerProps {
   tie: boolean
 }
 
-export function Player({ user, winner, tie }: PlayerProps) {
+function Player({ user, winner, tie }: PlayerProps) {
   return (
     <div className="player-message-container">
       {!winner ? (
@@ -17,3 +17,5 @@ export function Player({ user, winner, tie }: PlayerProps) {
     </div>
   )
 }
+
+export default Player
