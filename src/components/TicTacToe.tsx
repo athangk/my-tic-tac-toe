@@ -42,7 +42,7 @@ function TicTacToe() {
 
   const newGame = () => {
     setTicTacArray(Array(9).fill(null))
-    setUser("X")
+    setUser(X_MARK)
     setWinner(null)
     setTie(false)
   }
@@ -50,7 +50,7 @@ function TicTacToe() {
   return (
     <div className="tic-tac-toe__container">
       <Player user={user} winner={winner} tie={tie} />
-      <Board ticTacArray={ticTacArray} handleClick={(e) => handleClick(e)} />
+      <Board ticTacArray={ticTacArray} handleClick={handleClick} />
       <button className="btn__new-game" onClick={newGame}>
         New Game
       </button>

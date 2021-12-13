@@ -1,3 +1,5 @@
+import React from "react"
+
 interface BoardCellProps {
   num: number
   cellValue: string | null
@@ -8,7 +10,7 @@ function BoardCell({ num, cellValue, handleClick }: BoardCellProps) {
   return (
     <div className="cell">
       <div
-        className={`cell__inner no-select ${cellValue ? "mark-" + cellValue : "mark-none"}`}
+        className={`cell__inner no-select ${cellValue ? "mark-" + cellValue : "no-mark"}`}
         onClick={() => {
           handleClick(num)
         }}
@@ -19,4 +21,4 @@ function BoardCell({ num, cellValue, handleClick }: BoardCellProps) {
   )
 }
 
-export default BoardCell
+export default React.memo(BoardCell)
