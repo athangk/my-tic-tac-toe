@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import Button from "@mui/material/Button"
 
-import { Board } from "./Board"
-import { Player } from "./Player"
-import { winCells, gameTie, winMove, undefeatedMove } from "../utilities/calculate-game-status"
+import { Board } from "./board/Board"
+import { Player } from "./player/Player"
+import { winCells, gameTie, winMove, undefeatedMove } from "../../utilities/calculate-game-status"
 import {
   STATUS_START,
   STATUS_PLAYING,
@@ -11,10 +11,10 @@ import {
   STATUS_WON,
   X_MARK,
   O_MARK,
-} from "../utilities/tictactoe-constants"
-import { GameText } from "../utilities/locale"
+} from "../../utilities/tictactoe-constants"
+import { GameText } from "../../utilities/locale"
 
-import styles from "./TicTacToe.module.css"
+import styles from "./TicTacToe.module.scss"
 
 export function TicTacToe() {
   const [user, setUser] = useState<string>("X")
@@ -109,10 +109,6 @@ export function TicTacToe() {
           {GameText.new_game}
         </Button>
       </div>
-
-      {/* <button  >
-      
-      </button> */}
     </div>
   )
 }

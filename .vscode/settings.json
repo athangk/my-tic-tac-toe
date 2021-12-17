@@ -11,6 +11,9 @@
     "cSpell.words": [
         "aheadable"
     ],
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
    
       
 }

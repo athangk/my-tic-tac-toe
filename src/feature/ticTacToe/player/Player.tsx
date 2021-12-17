@@ -1,9 +1,9 @@
-import { STATUS_TIE, X_MARK } from "../utilities/tictactoe-constants"
-import { GameText } from "../utilities/locale"
+import { STATUS_TIE, X_MARK } from "../../../utilities/tictactoe-constants"
+import { GameText } from "../../../utilities/locale"
 import BoltSharp from "@mui/icons-material/BoltSharp"
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
 
-import styles from "./Player.module.css"
+import styles from "./Player.module.scss"
 
 interface PlayerProps {
   user: string
@@ -15,7 +15,7 @@ export function Player({ user, winner, status }: PlayerProps) {
   const iconUser = user === X_MARK ? <BoltSharp /> : <FavoriteBorderOutlinedIcon />
 
   return (
-    <div>
+    <div className={`${styles.player_container} ${styles.no_select}`}>
       {status === STATUS_TIE ? (
         <div className={`${styles.playerLabel} ${styles.tie}`}>{GameText.tie}</div>
       ) : (

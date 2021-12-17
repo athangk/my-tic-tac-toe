@@ -1,12 +1,12 @@
 import React from "react"
 
-import "./App.css"
-import { TicTacToe } from "./board/TicTacToe"
+import styles from "./App.module.scss"
+import { TicTacToe } from "./feature/ticTacToe/TicTacToe"
 
 function App() {
   return (
-    <main className="App">
-      <section className="app-section">
+    <main className={styles.app}>
+      <section className={styles.appSection}>
         <TicTacToe />
       </section>
     </main>

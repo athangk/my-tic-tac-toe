@@ -3,26 +3,28 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { FunctionComponent } from "react"
 import { X_MARK } from "../utilities/tictactoe-constants"
 
-import styles from "./CardFlip.module.css"
+import styles from "./CardFlip.module.scss"
 
-interface CardProps {
+interface CardFlipProps {
   flip: boolean | null
   restart: boolean
   cellValue: string | null
   winningCell: boolean | null
 }
 
-function CardFlip({ flip, restart, cellValue, winningCell }: CardProps) {
+function CardFlip({ flip, restart, cellValue, winningCell }: CardFlipProps) {
   return (
     <div className={styles.scene}>
       <div
-        className={`${styles.cardMark} ${flip && styles.cardflipped} ${restart && styles.cardStartflipped}`}
+        className={`${styles.card_container} ${styles.card_mark} ${flip && styles.card_flipped} ${
+          restart && styles.card_start_flipped
+        }`}
       >
-        <div className={styles.cardMarkFaceFront}></div>
+        <div className={`${styles.card_mark_face} ${styles.card_mark_face_front}`}></div>
         <div
-          className={`card_mark__face card_mark__face--back ${cellValue && "mark_" + cellValue} ${
-            winningCell && "winCell"
-          }`}
+          className={`${styles.card_mark_face} ${styles.card_mark_face_back} ${
+            cellValue && styles["mark_" + cellValue.toLowerCase()]
+          } ${winningCell && styles.win_cell}`}
         >
           {cellValue && (
             <>

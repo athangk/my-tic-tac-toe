@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react"
-import { Board } from "../board/Board"
+import { render, screen } from "@testing-library/react";
+import { Board } from "../feature/ticTacToe/board";
 
 test("Board screen debug", () => {
-  let squares = Array(9).fill("X")
+  let squares = Array(9).fill("X");
 
-  render(<Board ticTacArray={squares} />)
+  render(<Board ticTacArray={squares} />);
 
-  screen.debug()
-})
+  screen.debug();
+});

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Cell } from "./Cell"
 
-import styles from "./Board.module.css"
+import styles from "./Board.module.scss"
 
 interface BoardProps {
   ticTacArray: (string | null)[]

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 
-import CardFlip from "../components/CardFlip"
-import { STATUS_START, STATUS_WON, X_MARK } from "../utilities/tictactoe-constants"
+import CardFlip from "../../../components/CardFlip"
+import { STATUS_START, STATUS_WON, X_MARK } from "../../../utilities/tictactoe-constants"
 
-import styles from "./Cell.module.css"
+import styles from "./Cell.module.scss"
 
 interface CellProps {
   num: number
@@ -40,7 +40,7 @@ export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status
   return (
     <div className={styles.cell}>
       <div
-        className={`${styles.cell__inner} ${styles.no_select} ${
+        className={`${styles.cell_inner} ${styles.no_select} ${
           cellValue === X_MARK ? styles.markX : styles.markO
         }  
         ${aheadable && styles.aheadMove} ${avoidable && styles.avoidMove} `}
