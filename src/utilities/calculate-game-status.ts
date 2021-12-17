@@ -1,4 +1,4 @@
-import { O_MARK, WIN_COMBINATION, X_MARK } from "./constants"
+import { O_MARK, WIN_COMBINATION, X_MARK } from "./tictactoe-constants"
 
 /**
  * Detects win, and returns cells
