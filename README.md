@@ -1,8 +1,6 @@
 # my-tic-tac-toe-ReactJS
 
-Tic tac toe with : 
-ReactJs hooks, typescript and automation tests.
-& move calculations for winning and avoid loosing
+Tic tac toe with : ReactJs hooks, Typescript & move calculations for winning and avoid loosing
 
 
 #### -Game Stages: Start / Win 
