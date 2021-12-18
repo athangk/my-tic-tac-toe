@@ -1,9 +1,9 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import { Player } from "../feature/Player";
+import React from "react"
+import { render, screen } from "@testing-library/react"
+import { Player } from "../feature/TicTacToe/player/Player"
 
 test("renders learn react link", () => {
-  render(<Player user={"X"} winner={"X"} />);
-  const linkElement = screen.getByText(/Winner: X/i);
-  expect(linkElement).toBeInTheDocument();
-});
+  render(<Player user={"X"} winner={"X"} />)
+  const linkElement = screen.getByText(/Winner/i)
+  expect(linkElement).toBeInTheDocument()
+})
