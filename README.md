@@ -2,10 +2,10 @@
 
 Tic tac toe with : ReactJs hooks, Typescript & move calculations for winning and avoid loosing
 <p float=left>
-  <b>Green</b> square indicator for the next move for winning
+  <span style="background:green"><b>Green</b></span> square indicator for the next move for winning
   </p>
 <p float=left>
-<b>Red</b> square indicator for the next move to avoid loosing
+<span style="background:red"><b>Red</b></span> square indicator for the next move to avoid loosing
   </p>
 
 #### -Game Stages: Start / Win 
