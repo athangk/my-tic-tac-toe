@@ -1,0 +1,70 @@
+.scene {
+  height: 80px;
+  width: 80px;
+  max-height: 100%;
+  max-width: 100%;
+  perspective: 600px;
+
+  .card_container {
+    &.card_mark {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      position: relative;
+    }
+
+    &.card_flipped {
+      transform: rotateY(180deg);
+    }
+
+    &.card_start_flipped {
+      transform: rotateY(0deg);
+    }
+    .card_mark_face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* line-height: 260px; */
+      color: white;
+      text-align: center;
+      /* font-size: 40px; */
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .card_mark_face_front {
+      background: #0f9fa81a;
+    }
+
+    .card_mark_face_back {
+      transform: rotateY(180deg);
+    }
+
+    .card_mark_face_back.mark_x {
+      background: #a80f7e;
+    }
+    .card_mark_face_back.mark_o {
+      background: #0f9fa8;
+    }
+
+    .win_cell {
+      animation: winMove 2s forwards;
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+
+@keyframes winMove {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: green;
+  }
+}
