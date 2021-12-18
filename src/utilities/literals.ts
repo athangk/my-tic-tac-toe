@@ -1,4 +1,4 @@
-export const GameText = {
+export const GameLiterals = {
   new_game: "New Game",
   winner: "Winner",
   tie: "Tie",

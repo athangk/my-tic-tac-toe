@@ -12,12 +12,12 @@ import {
   X_MARK,
   O_MARK,
 } from "../../utilities/tictactoe-constants"
-import { GameText } from "../../utilities/locale"
+import { GameLiterals } from "../../utilities/literals"
 
 import styles from "./TicTacToe.module.scss"
 
 export function TicTacToe() {
-  const [user, setUser] = useState<string>("X")
+  const [user, setUser] = useState<string>(X_MARK)
   const [ticTacArray, setTicTacArray] = useState<(string | null)[]>(Array(9).fill(null))
   const [winner, setWinner] = useState<string | null>(null)
   const [status, setStatus] = useState<string | null>(STATUS_START)
@@ -25,43 +25,54 @@ export function TicTacToe() {
   const [aheadCells, setAheadCells] = useState<(number | null)[]>(Array(3).fill(null))
   const [avoidCells, setAvoidCells] = useState<(number | null)[]>(Array(3).fill(null))
 
-  const updateArray = (num: number) => {
-    setTicTacArray(prevState => prevState.map((item, index) => (index === num ? user : item)))
-  }
-
+  /**
+   * Handles cell clicks from cell component
+   * @param num
+   * @returns
+   */
   const handleClick = (num: number) => {
+    // cell has value, or a win is made
     if (ticTacArray[num] || winner) {
       return
     }
-    updateArray(num)
-  }
 
-  const checkGameStatus = () => {
-    const winningCellsList = winCells(ticTacArray)
+    // update ticktacktoe array
+    const sliceTicTac = ticTacArray.slice()
+    sliceTicTac[num] = user
 
-    if (winningCellsList?.length === 3) {
-      setWinningCells(winningCellsList)
+    setTicTacArray(sliceTicTac)
+
+    // check win
+    const wonList = winCells(sliceTicTac) as number[]
+    if (wonList?.length === 3) {
+      setWinningCells(wonList)
       setWinner(user)
       setStatus(STATUS_WON)
       return
     }
 
-    const gameStatus = gameTie(ticTacArray) ? STATUS_TIE : STATUS_PLAYING
-    if (gameStatus === STATUS_TIE) {
-      setStatus(gameStatus)
+    // check draw
+    const isTie = gameTie(sliceTicTac)
+    if (isTie) {
+      setStatus(STATUS_TIE)
       return
     }
-    toggleCurrentUser()
-  }
 
-  const toggleCurrentUser = () => {
+    //change user
     const currentUser = user === X_MARK ? O_MARK : X_MARK
     setUser(currentUser)
-    hints(currentUser)
+
+    // set hints for best move for win, best move to not loose
+    hints(sliceTicTac, currentUser)
   }
 
-  const hints = (currentUser: string) => {
-    const currentArray = [...ticTacArray]
+  /**
+   * Priority for best move to win and then not loose move
+   * @param currentTicTacArray
+   * @param currentUser
+   */
+  const hints = (currentTicTacArray: (string | null)[], currentUser: string) => {
+    const currentArray = [...currentTicTacArray]
     const aheadCellsList = winMove(currentArray, currentUser) as (number | null)[]
     setAheadCells(aheadCellsList)
 
@@ -73,32 +84,35 @@ export function TicTacToe() {
       }
     }
   }
-
+  /**
+   * Resets for new game
+   */
   const newGame = () => {
     setTicTacArray(Array(9).fill(null))
     setWinningCells(Array(3).fill(null))
     setAheadCells(Array(3).fill(null))
     setAvoidCells(Array(3).fill(null))
-    setUser("X")
+    setUser(X_MARK)
     setWinner(null)
     setStatus(STATUS_START)
   }
 
+  /**
+   * Use effect only for game status
+   */
   useEffect(() => {
     if (!status || status === STATUS_START) {
       setStatus(STATUS_PLAYING)
       return
     }
-
-    checkGameStatus()
-  }, [ticTacArray])
+  }, [status])
 
   return (
     <div>
       <Player user={user} winner={winner} status={status} />
       <Board
         ticTacArray={ticTacArray}
-        handleClick={e => handleClick(e)}
+        handleClick={handleClick}
         winningCells={winningCells}
         aheadCells={aheadCells}
         avoidCells={avoidCells}
@@ -106,7 +120,7 @@ export function TicTacToe() {
       />
       <div className={styles.btnNewGame}>
         <Button variant="outlined" onClick={newGame}>
-          {GameText.new_game}
+          {GameLiterals.new_game}
         </Button>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { STATUS_TIE, X_MARK } from "../../../utilities/tictactoe-constants"
-import { GameText } from "../../../utilities/locale"
+import { GameLiterals } from "../../../utilities/literals"
 import BoltSharp from "@mui/icons-material/BoltSharp"
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
 
@@ -17,10 +17,10 @@ export function Player({ user, winner, status }: PlayerProps) {
   return (
     <div className={`${styles.player_container} ${styles.no_select}`}>
       {status === STATUS_TIE ? (
-        <div className={`${styles.playerLabel} ${styles.tie}`}>{GameText.tie}</div>
+        <div className={`${styles.playerLabel} ${styles.tie}`}>{GameLiterals.tie}</div>
       ) : (
         <div className={styles.playerLabel}>
-          {winner ? GameText.winner : GameText.player}
+          {winner ? GameLiterals.winner : GameLiterals.player}
           {<div className={styles.playerIcon}>{iconUser}</div>}
         </div>
       )}

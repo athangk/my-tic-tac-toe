@@ -19,9 +19,12 @@ export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status
   const aheadable = aheadCell && !cellValue
   const avoidable = !aheadCell && avoidCell && !cellValue
   const restart = status === STATUS_START
-  console.log(num, restart, cellValue)
   const [flip, setFlip] = useState(false)
 
+  /**
+   * check if game starts/restarts and set state
+   * for repositioning the cards
+   */
   useEffect(() => {
     if (restart) {
       setFlip(false)
@@ -29,6 +32,11 @@ export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status
     }
   }, [restart, flip])
 
+  /**
+   * Pass event to parent components and flips the card
+   * @param num
+   * @returns
+   */
   const handleCardClick = (num: number) => {
     if (status === STATUS_WON) {
       return
@@ -41,9 +49,9 @@ export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status
     <div className={styles.cell}>
       <div
         className={`${styles.cell_inner} ${styles.no_select} ${
-          cellValue === X_MARK ? styles.markX : styles.markO
+          cellValue === X_MARK ? styles.mark_x : styles.mark_o
         }  
-        ${aheadable && styles.aheadMove} ${avoidable && styles.avoidMove} `}
+        ${aheadable && styles.ahead_move} ${avoidable && styles.avoid_move} `}
         onClick={() => {
           handleCardClick(num)
         }}

@@ -24,12 +24,10 @@ const gameTie = (ticTacArray: (string | null)[]): boolean => ticTacArray.every(e
  * @param ticTacArray
  * @returns e.x. [1,3,6]
  */
-
 const winMove = (ticTacArray: (string | null)[], user: string): (number | null)[] => {
   const currentArray = ticTacArray?.map((item, index) => {
     if (ticTacArray[index] == null) {
       ticTacArray[index] = user
-
       const result = winCells(ticTacArray)
       ticTacArray[index] = null
       return result
@@ -56,7 +54,6 @@ const undefeatedMove = (ticTacArray: (string | null)[], user: string) => {
           tempTicTacArray[i] = user === X_MARK ? O_MARK : X_MARK
           result = winCells(tempTicTacArray)
           tempTicTacArray[i] = null
-
           if (result && result?.length >= 2) {
             return result
           }

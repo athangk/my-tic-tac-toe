@@ -1,6 +1,5 @@
 import BoltSharp from "@mui/icons-material/BoltSharp"
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
-import { FunctionComponent } from "react"
 import { X_MARK } from "../utilities/tictactoe-constants"
 
 import styles from "./CardFlip.module.scss"
