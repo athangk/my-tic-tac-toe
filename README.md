@@ -1,11 +1,17 @@
 # my-tic-tac-toe-ReactJS
 
-A simple tic tac toe with react hook, typescript and automation tests.
+Tic tac toe with : 
+ReactJs hooks, typescript and automation tests.
+& move calculations for winning and avoid loosing
 
 
-#### -Game Stages: Start / Win / Tie
+#### -Game Stages: Start / Win 
 <p float=left>
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture_1.JPG">
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture2_Resized.JPG">
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/Capture3_Resized.JPG">
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/refactor_win.gif">
+  </p>
+
+
+#### -Game Stages: Start / Tie
+<p float=left>
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/refactor_tie.gif">
   </p>
