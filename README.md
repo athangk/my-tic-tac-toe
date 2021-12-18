@@ -1,14 +1,13 @@
 # my-tic-tac-toe-ReactJS
 
-```html 
 Tic tac toe with : ReactJs hooks, Typescript, simple automation tests & move calculations for winning and avoid loosing
 <p float=left>
-  <b>-Green</b> square indicator for winning move
+  <i><b>-Green</b> square indicator for winning move</i>
   </p>
 <p float=left>
-<b>-Red</b> square indicator for stopping the opponent from winning
+  <i><b>-Red</b> square indicator for stopping the opponent from winning</i>
   </p>
-```
+
 #### -Game Stages: Start / Win 
 <p float=left>
 <img src="https://github.com/athangk/my-tic-tac-toe/blob/main/refactor_win.gif">
