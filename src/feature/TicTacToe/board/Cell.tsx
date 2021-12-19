@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
 
 import CardFlip from "../../../components/CardFlip"
-import { STATUS_START, STATUS_WON, X_MARK } from "../../../utilities/tictactoe-constants"
+import { STATUS_START, STATUS_WON } from "../../../utilities/tictactoe-constants"
 
+import cx from "classnames"
 import styles from "./Cell.module.scss"
 
 interface CellProps {
@@ -48,10 +49,13 @@ export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status
   return (
     <div className={styles.cell}>
       <div
-        className={`${styles.cell_inner} ${styles.no_select} ${
-          cellValue === X_MARK ? styles.mark_x : styles.mark_o
-        }  
-        ${aheadable && styles.ahead_move} ${avoidable && styles.avoid_move} `}
+        className={cx(
+          styles.cell_inner,
+          styles.no_select,
+          { [styles["mark_" + cellValue?.toLowerCase()]]: cellValue },
+          { [styles.ahead_move]: aheadable },
+          { [styles.avoid_move]: avoidable }
+        )}
         onClick={() => {
           handleCardClick(num)
         }}

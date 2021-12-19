@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Cell } from "./Cell"
 
 import styles from "./Board.module.scss"

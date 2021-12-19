@@ -1,7 +1,6 @@
-import BoltSharp from "@mui/icons-material/BoltSharp"
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
-import { X_MARK } from "../utilities/tictactoe-constants"
+import CardMark from "./CardMark"
 
+import cx from "classnames"
 import styles from "./CardFlip.module.scss"
 
 interface CardFlipProps {
@@ -15,25 +14,23 @@ function CardFlip({ flip, restart, cellValue, winningCell }: CardFlipProps) {
   return (
     <div className={styles.scene}>
       <div
-        className={`${styles.tic_container} ${styles.tic} ${flip && styles.tic_flipped} ${
-          restart && styles.card_start_flipped
-        }`}
+        className={cx(
+          styles.tic_container,
+          styles.tic,
+          { [styles.tic_flipped]: flip },
+          { [styles.card_start_flipped]: restart }
+        )}
       >
-        <div className={`${styles.tic_side} ${styles.tic_side_front}`}></div>
+        <div className={cx(styles.tic_side, styles.tic_side_front)}></div>
         <div
-          className={`${styles.tic_side} ${styles.tic_side_back} ${
-            cellValue && styles["mark_" + cellValue.toLowerCase()]
-          } ${winningCell && styles.win_cell}`}
-        >
-          {cellValue && (
-            <>
-              {cellValue === X_MARK ? (
-                <BoltSharp fontSize="large" />
-              ) : (
-                <FavoriteBorderOutlinedIcon fontSize="large" />
-              )}
-            </>
+          className={cx(
+            styles.tic_side,
+            styles.tic_side_back,
+            { [styles.win_cell]: winningCell },
+            { [styles["mark_" + cellValue?.toLowerCase()]]: cellValue }
           )}
+        >
+          {cellValue && <CardMark mark={cellValue}></CardMark>}
         </div>
       </div>
     </div>
