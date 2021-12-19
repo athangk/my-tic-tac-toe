@@ -1,6 +1,6 @@
 # my-tic-tac-toe-ReactJS
 
-Tic tac toe with : ReactJS hooks n' Typescript, simple automation tests & move calculations for winning and avoid loosing
+Tic tac toe with move calculations for winning and avoid loosing. Using: ReactJs hooks, Typescript, simple automation tests.
 <p float=left>
   <i><b>-Green</b> square indicator for winning move</i>
   </p>
