@@ -11,7 +11,7 @@ interface PlayerProps {
   status: string | null
 }
 
-export function Player({ user, winner, status }: PlayerProps) {
+function Player({ user, winner, status }: PlayerProps) {
   const iconUser = user === X_MARK ? <BoltSharp /> : <FavoriteBorderOutlinedIcon />
 
   return (
@@ -27,3 +27,5 @@ export function Player({ user, winner, status }: PlayerProps) {
     </div>
   )
 }
+
+export default Player

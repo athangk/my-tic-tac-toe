@@ -1,4 +1,4 @@
-import { Cell } from "./Cell"
+import Cell from "./Cell"
 
 import styles from "./Board.module.scss"
 
@@ -11,14 +11,7 @@ interface BoardProps {
   handleClick: (num: number) => void
 }
 
-export function Board({
-  ticTacArray,
-  winningCells,
-  aheadCells,
-  avoidCells,
-  status,
-  handleClick,
-}: BoardProps) {
+function Board({ ticTacArray, winningCells, aheadCells, avoidCells, status, handleClick }: BoardProps) {
   return (
     <>
       <div className={styles.grid}>
@@ -38,3 +31,5 @@ export function Board({
     </>
   )
 }
+
+export default Board

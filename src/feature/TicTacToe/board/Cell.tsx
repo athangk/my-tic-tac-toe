@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 
-import CardFlip from "../../../components/CardFlip"
 import { STATUS_START, STATUS_WON } from "../../../utilities/tictactoe-constants"
 
 import cx from "classnames"
 import styles from "./Cell.module.scss"
+import CardFlip from "../../../components/CardFlip"
 
 interface CellProps {
   num: number
@@ -16,7 +16,7 @@ interface CellProps {
   handleClick: (num: number) => void
 }
 
-export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status, handleClick }: CellProps) {
+function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status, handleClick }: CellProps) {
   const aheadable = aheadCell && !cellValue
   const avoidable = !aheadCell && avoidCell && !cellValue
   const restart = status === STATUS_START
@@ -65,3 +65,5 @@ export function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status
     </div>
   )
 }
+
+export default Cell

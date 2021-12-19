@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react"
 import Button from "@mui/material/Button"
 
-import { Board } from "./board/Board"
-import { Player } from "./player/Player"
 import { winCells, gameTie, winMove, undefeatedMove } from "../../utilities/calculate-game-status"
 import {
   STATUS_START,
@@ -15,8 +13,10 @@ import {
 import { GameLiterals } from "../../utilities/literals"
 
 import styles from "./TicTacToe.module.scss"
+import Player from "./player/Player"
+import Board from "./board/Board"
 
-export function TicTacToe() {
+function TicTacToe() {
   const [user, setUser] = useState<string>(X_MARK)
   const [ticTacArray, setTicTacArray] = useState<(string | null)[]>(Array(9).fill(null))
   const [winner, setWinner] = useState<string | null>(null)
@@ -126,3 +126,5 @@ export function TicTacToe() {
     </div>
   )
 }
+
+export default TicTacToe
