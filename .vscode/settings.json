@@ -9,7 +9,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.words": [
-        "aheadable"
+        "aheadable",
+        "Overridable"
     ],
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

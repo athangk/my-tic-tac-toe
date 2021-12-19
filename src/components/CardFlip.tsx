@@ -1,4 +1,4 @@
-import CardMark from "./CardMark"
+import Mark from "./Mark"
 
 import cx from "classnames"
 import styles from "./CardFlip.module.scss"
@@ -30,7 +30,7 @@ function CardFlip({ flip, restart, cellValue, winningCell }: CardFlipProps) {
             { [styles["mark_" + cellValue?.toLowerCase()]]: cellValue }
           )}
         >
-          {cellValue && <CardMark mark={cellValue}></CardMark>}
+          {cellValue && <Mark user={cellValue} size={"large"}></Mark>}
         </div>
       </div>
     </div>
