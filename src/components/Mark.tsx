@@ -1,7 +1,5 @@
 import BoltSharp from "@mui/icons-material/BoltSharp"
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
-import { SvgIconPropsSizeOverrides } from "@mui/material/SvgIcon/SvgIcon"
-import { EnumType } from "typescript"
 import { X_MARK } from "../utilities/tictactoe-constants"
 
 enum sizeNum {
