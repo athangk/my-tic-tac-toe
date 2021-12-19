@@ -118,7 +118,7 @@ export function TicTacToe() {
         avoidCells={avoidCells}
         status={status}
       />
-      <div className={styles.btnNewGame}>
+      <div className={styles.btn_new_game}>
         <Button variant="outlined" onClick={newGame}>
           {GameLiterals.new_game}
         </Button>

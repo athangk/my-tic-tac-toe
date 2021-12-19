@@ -15,13 +15,13 @@ function CardFlip({ flip, restart, cellValue, winningCell }: CardFlipProps) {
   return (
     <div className={styles.scene}>
       <div
-        className={`${styles.card_container} ${styles.card_mark} ${flip && styles.card_flipped} ${
+        className={`${styles.tic_container} ${styles.tic} ${flip && styles.tic_flipped} ${
           restart && styles.card_start_flipped
         }`}
       >
-        <div className={`${styles.card_mark_face} ${styles.card_mark_face_front}`}></div>
+        <div className={`${styles.tic_side} ${styles.tic_side_front}`}></div>
         <div
-          className={`${styles.card_mark_face} ${styles.card_mark_face_back} ${
+          className={`${styles.tic_side} ${styles.tic_side_back} ${
             cellValue && styles["mark_" + cellValue.toLowerCase()]
           } ${winningCell && styles.win_cell}`}
         >
