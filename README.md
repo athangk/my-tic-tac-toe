@@ -9,7 +9,7 @@ Tic tac toe with move calculations for winning and avoid loosing. Using: ReactJs
   </p>
   
   
-  <p> npm install // npm start </p>
+  <p> <i>npm install // npm start </i></p>
 
 #### -Game Stages: Start / Win 
 <p float=left>
