@@ -7,11 +7,8 @@ Tic tac toe with move calculations for winning and avoid loosing. Using: ReactJs
 <p float=left>
   <i><b>-Red</b> square indicator for stopping the opponent from winning</i>
   </p>
- 
-  `npm install`
-  
-  <br>
-  `npm start`
+  <p>`npm install` </p>
+ <p>`npm start` </p>
 
 #### -Game Stages: Start / Win 
 <p float=left>
