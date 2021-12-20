@@ -1,5 +1,6 @@
 import BoltSharp from "@mui/icons-material/BoltSharp"
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
+import { Nullable } from "../models/models"
 import { X_MARK } from "../utilities/tictactoe-constants"
 
 enum sizeNum {
@@ -8,7 +9,7 @@ enum sizeNum {
 }
 
 interface MarkProps {
-  user: string | null
+  user: Nullable<string>
   size: string
 }
 

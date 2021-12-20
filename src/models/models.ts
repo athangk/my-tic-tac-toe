@@ -1,9 +1,11 @@
-interface TicTacToeData extends Array<string | null> {
-  [index: number]: string | null
+type Nullable<T> = T | null
+
+interface TicTacToeData extends Array<Nullable<string>> {
+  [index: number]: Nullable<string>
 }
 
-interface MarkIndicatorData extends Array<number | null> {
-  [index: number]: number | null
+interface MarkIndicatorData extends Array<Nullable<number>> {
+  [index: number]: Nullable<number>
 }
 
-export type { TicTacToeData, MarkIndicatorData }
+export type { TicTacToeData, MarkIndicatorData, Nullable }

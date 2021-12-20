@@ -1,14 +1,14 @@
 import Cell from "./Cell"
+import { TicTacToeData, MarkIndicatorData, Nullable } from "../../../models/models"
 
 import styles from "./Board.module.scss"
-import { TicTacToeData, MarkIndicatorData } from "../../../models/models"
 
 interface BoardProps {
   ticTacArray: TicTacToeData
   winningCells: MarkIndicatorData
   aheadCells: MarkIndicatorData
   avoidCells: MarkIndicatorData
-  status: string | null
+  status: Nullable<string>
   handleClick: (num: number) => void
 }
 

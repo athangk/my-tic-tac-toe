@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Button from "@mui/material/Button"
-
+import Player from "./player/Player"
+import Board from "./board/Board"
 import { winCells, gameTie, winMove, undefeatedMove } from "../../utilities/calculate-game-status"
 import {
   STATUS_START,
@@ -11,17 +12,15 @@ import {
   O_MARK,
 } from "../../utilities/tictactoe-constants"
 import { GameLiterals } from "../../utilities/literals"
+import { MarkIndicatorData, Nullable, TicTacToeData } from "../../models/models"
 
 import styles from "./TicTacToe.module.scss"
-import Player from "./player/Player"
-import Board from "./board/Board"
-import { MarkIndicatorData, TicTacToeData } from "../../models/models"
 
 function TicTacToe() {
   const [user, setUser] = useState<string>(X_MARK)
   const [ticTacArray, setTicTacArray] = useState<TicTacToeData>(Array(9).fill(null))
-  const [winner, setWinner] = useState<string | null>(null)
-  const [status, setStatus] = useState<string | null>(STATUS_START)
+  const [winner, setWinner] = useState<Nullable<string>>(null)
+  const [status, setStatus] = useState<Nullable<string>>(STATUS_START)
   const [winningCells, setWinningCells] = useState<MarkIndicatorData>(Array(3).fill(null))
   const [aheadCells, setAheadCells] = useState<MarkIndicatorData>(Array(3).fill(null))
   const [avoidCells, setAvoidCells] = useState<MarkIndicatorData>(Array(3).fill(null))
@@ -72,7 +71,7 @@ function TicTacToe() {
    * @param currentTicTacArray
    * @param currentUser
    */
-  const hints = (currentTicTacArray: (string | null)[], currentUser: string) => {
+  const hints = (currentTicTacArray: TicTacToeData, currentUser: string) => {
     const currentArray = [...currentTicTacArray]
     const aheadCellsList = winMove(currentArray, currentUser) as (number | null)[]
     setAheadCells(aheadCellsList)

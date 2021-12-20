@@ -1,13 +1,14 @@
 import { STATUS_TIE } from "../../../utilities/tictactoe-constants"
 import { GameLiterals } from "../../../utilities/literals"
+import Mark from "../../../components/Mark"
+import { Nullable } from "../../../models/models"
 
 import styles from "./Player.module.scss"
-import Mark from "../../../components/Mark"
 
 interface PlayerProps {
   user: string
-  winner: string | null
-  status: string | null
+  winner: Nullable<string>
+  status: Nullable<string>
 }
 
 function Player({ user, winner, status }: PlayerProps) {

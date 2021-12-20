@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react"
-
+import CardFlip from "../../../components/CardFlip"
 import { STATUS_START, STATUS_WON } from "../../../utilities/tictactoe-constants"
+import { Nullable } from "../../../models/models"
 
 import cx from "classnames"
 import styles from "./Cell.module.scss"
-import CardFlip from "../../../components/CardFlip"
 
 interface CellProps {
   num: number
-  cellValue: string | null
-  winningCell: boolean | null
-  aheadCell: boolean | null
-  avoidCell: boolean | null
-  status: string | null
+  cellValue: Nullable<string>
+  winningCell: Nullable<boolean>
+  aheadCell: Nullable<boolean>
+  avoidCell: Nullable<boolean>
+  status: Nullable<string>
   handleClick: (num: number) => void
 }
 
