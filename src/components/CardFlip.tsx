@@ -2,12 +2,13 @@ import Mark from "./Mark"
 
 import cx from "classnames"
 import styles from "./CardFlip.module.scss"
+import { Nullable } from "../models/models"
 
 interface CardFlipProps {
-  flip: boolean | null
+  flip: Nullable<boolean>
   restart: boolean
-  cellValue: string | null
-  winningCell: boolean | null
+  cellValue: Nullable<string>
+  winningCell: Nullable<boolean>
 }
 
 function CardFlip({ flip, restart, cellValue, winningCell }: CardFlipProps) {
