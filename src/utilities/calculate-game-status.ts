@@ -1,3 +1,4 @@
+import { MarkIndicatorData, TicTacToeData } from "../models/models"
 import { O_MARK, WIN_COMBINATION, X_MARK } from "./tictactoe-constants"
 
 /**
@@ -5,7 +6,7 @@ import { O_MARK, WIN_COMBINATION, X_MARK } from "./tictactoe-constants"
  * @param ticTacArray
  * @returns e.x. [1,3,6]
  */
-const winCells = (ticTacArray: (string | null)[]) =>
+const winCells = (ticTacArray: TicTacToeData) =>
   WIN_COMBINATION.find(combination =>
     combination.every(
       el => ticTacArray[el - 1] != null && ticTacArray[el - 1] === ticTacArray[combination[0] - 1]
@@ -17,14 +18,14 @@ const winCells = (ticTacArray: (string | null)[]) =>
  * @param ticTacArray
  * @returns e.x. [1,3,6]
  */
-const gameTie = (ticTacArray: (string | null)[]): boolean => ticTacArray.every(el => el != null)
+const gameTie = (ticTacArray: TicTacToeData): boolean => ticTacArray.every(el => el != null)
 
 /**
  * Detects move to go for win, and returns cells
  * @param ticTacArray
  * @returns e.x. [1,3,6]
  */
-const winMove = (ticTacArray: (string | null)[], user: string): (number | null)[] => {
+const winMove = (ticTacArray: TicTacToeData, user: string): MarkIndicatorData => {
   const currentArray = ticTacArray?.map((item, index) => {
     if (ticTacArray[index] == null) {
       ticTacArray[index] = user
@@ -35,7 +36,7 @@ const winMove = (ticTacArray: (string | null)[], user: string): (number | null)[
       return null
     }
   })
-  return currentArray.filter(el => el != null).flat() as (number | null)[]
+  return currentArray.filter(el => el != null).flat() as MarkIndicatorData
 }
 
 /**
@@ -43,7 +44,7 @@ const winMove = (ticTacArray: (string | null)[], user: string): (number | null)[
  * @param ticTacArray
  * @returns e.x. [1,3,6]
  */
-const undefeatedMove = (ticTacArray: (string | null)[], user: string) => {
+const undefeatedMove = (ticTacArray: TicTacToeData, user: string): MarkIndicatorData => {
   const tempTicTacArray = [...ticTacArray]
   const currentArray = ticTacArray?.map((item, index) => {
     let result = null
@@ -65,7 +66,7 @@ const undefeatedMove = (ticTacArray: (string | null)[], user: string) => {
     }
   })
 
-  const resultAvoidList = currentArray.filter(el => el != null).flat()
+  const resultAvoidList: MarkIndicatorData = currentArray.filter(el => el != null).flat() as MarkIndicatorData
   return resultAvoidList ? resultAvoidList : []
 }
 
