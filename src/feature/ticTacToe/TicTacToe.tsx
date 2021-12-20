@@ -15,15 +15,16 @@ import { GameLiterals } from "../../utilities/literals"
 import styles from "./TicTacToe.module.scss"
 import Player from "./player/Player"
 import Board from "./board/Board"
+import { MarkIndicatorData, TicTacToeData } from "../../models/models"
 
 function TicTacToe() {
   const [user, setUser] = useState<string>(X_MARK)
-  const [ticTacArray, setTicTacArray] = useState<(string | null)[]>(Array(9).fill(null))
+  const [ticTacArray, setTicTacArray] = useState<TicTacToeData>(Array(9).fill(null))
   const [winner, setWinner] = useState<string | null>(null)
   const [status, setStatus] = useState<string | null>(STATUS_START)
-  const [winningCells, setWinningCells] = useState<(number | null)[]>(Array(3).fill(null))
-  const [aheadCells, setAheadCells] = useState<(number | null)[]>(Array(3).fill(null))
-  const [avoidCells, setAvoidCells] = useState<(number | null)[]>(Array(3).fill(null))
+  const [winningCells, setWinningCells] = useState<MarkIndicatorData>(Array(3).fill(null))
+  const [aheadCells, setAheadCells] = useState<MarkIndicatorData>(Array(3).fill(null))
+  const [avoidCells, setAvoidCells] = useState<MarkIndicatorData>(Array(3).fill(null))
 
   /**
    * Handles cell clicks from cell component
