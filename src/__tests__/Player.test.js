@@ -1,6 +1,6 @@
 import React from "react"
 import { render, screen } from "@testing-library/react"
-import { Player } from "../feature/TicTacToe/player/Player"
+import { Player } from "../feature/ticTacToe/player/Player"
 
 test("renders learn react link", () => {
   render(<Player user={"X"} winner={"X"} />)

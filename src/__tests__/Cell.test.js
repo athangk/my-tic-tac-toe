@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react"
-import { Cell } from "../feature/TicTacToe/board/Cell"
+import { Cell } from "../feature/ticTacToe/board/Cell"
 import styles from "../../src/feature/TicTacToe/board/Cell.module.scss"
 
 test("cell value O player", () => {
