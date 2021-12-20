@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react"
 import App from "../App"
-import styles from "../../src/feature/TicTacToe/board/Cell.module.scss"
+import styles from "../../src/feature/ticTacToe/board/Cell.module.scss"
 
 test("Winner 1rst scenario", () => {
   const { container } = render(<App />)
