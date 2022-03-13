@@ -5,7 +5,7 @@ Tic tac toe with move calculations for winning and avoid loosing. Using: ReactJs
   <i><b>-Green</b> square: Move to `Choose to Win`</i>
   </p>
 <p float=left>
-  <i><b>-Red</b> square: Move to `Avoid Defeat` </i>
+  <i><b>-Red</b> square: Move to `Prevent Defeat` </i>
   </p>
   
   
