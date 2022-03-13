@@ -2,10 +2,10 @@
 
 Tic tac toe with move calculations for winning and avoid loosing. Using: ReactJs hooks, Typescript, simple automation tests.
 <p float=left>
-  <i><b>-Green</b> square indicator for winning move</i>
+  <i><b>-Green</b> square: Move to `Choose to Win`</i>
   </p>
 <p float=left>
-  <i><b>-Red</b> square indicator for stopping the opponent from winning</i>
+  <i><b>-Red</b> square: Move to `Avoid Defeat` </i>
   </p>
   
   
