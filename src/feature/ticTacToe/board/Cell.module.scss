@@ -40,7 +40,7 @@
   }
 
   .avoid_move::after {
-    content: "Avoid this moove";
+    content: "Prevent Defeat";
     color: inherit;
     position: absolute;
     top: 20px;
@@ -55,7 +55,7 @@
     position: relative;
   }
   .ahead_move::after {
-    content: "Choose to win";
+    content: "Choose to Win";
     color: inherit;
     position: absolute;
     top: 20px;
@@ -68,7 +68,7 @@
     background-color: transparent;
   }
   80% {
-    color: white;
+    color: rgba(255, 255, 255, 0.534);
     background-color: green;
   }
   100% {
@@ -82,7 +82,7 @@
   }
 
   80% {
-    color: white;
+    color: rgba(255, 255, 255, 0.616);
     background-color: red;
   }
   100% {
