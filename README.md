@@ -13,11 +13,11 @@ Tic tac toe with move calculations for winning and avoid loosing. Using: ReactJs
 
 #### -Game Stages: Start / Win 
 <p float=left>
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/win_gif_r.gif">
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/win_gif_n.gif">
   </p>
 
 
 #### -Game Stages: Start / Tie
 <p float=left>
-<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/tie_gif_r.gif">
+<img src="https://github.com/athangk/my-tic-tac-toe/blob/main/tie_gif_n.gif">
   </p>
