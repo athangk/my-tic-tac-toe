@@ -33,15 +33,34 @@
   }
 
   .avoid_move {
-    animation: avoidMove 2s ease-in-out;
+    animation: avoidMove 3s ease-in-out;
     background-color: transparent;
-    color: white;
+    color: transparent;
+    position: relative;
+  }
+
+  .avoid_move::after {
+    content: "Avoid this moove";
+    color: inherit;
+    position: absolute;
+    top: 20px;
+    left: 4px;
+    font-size: 14px;
   }
 
   .ahead_move {
-    animation: aheadMove 2s ease-in-out;
+    animation: aheadMove 3s ease-in-out;
     background-color: transparent;
-    color: white;
+    color: transparent;
+    position: relative;
+  }
+  .ahead_move::after {
+    content: "Choose to win";
+    color: inherit;
+    position: absolute;
+    top: 20px;
+    left: 4px;
+    font-size: 14px;
   }
 }
 @keyframes aheadMove {
@@ -49,6 +68,7 @@
     background-color: transparent;
   }
   80% {
+    color: white;
     background-color: green;
   }
   100% {
@@ -62,6 +82,7 @@
   }
 
   80% {
+    color: white;
     background-color: red;
   }
   100% {
