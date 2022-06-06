@@ -15,6 +15,12 @@
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
    
       
 }

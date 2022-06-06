@@ -67,23 +67,23 @@ function TicTacToe() {
   }
 
   /**
-   * Priority for best move to win and then not loose move
+   * Next move Hint to avoid loose or win
    * @param currentTicTacArray
    * @param currentUser
    */
   const hints = (currentTicTacArray: TicTacToeData, currentUser: string) => {
-    const currentArray = [...currentTicTacArray]
-    const aheadCellsList = winMove(currentArray, currentUser) as (number | null)[]
+    const currentArray:TicTacToeData = [...currentTicTacArray]
+    const aheadCellsList:MarkIndicatorData = winMove(currentArray, currentUser)
     setAheadCells(aheadCellsList)
 
     if (aheadCellsList.length === 0) {
-      const aheadAvoidList = undefeatedMove(currentArray, currentUser) as (number | null)[]
-
+      const aheadAvoidList:MarkIndicatorData = undefeatedMove(currentArray, currentUser)
       if (aheadAvoidList.length > 2) {
         setAvoidCells(aheadAvoidList)
       }
     }
   }
+
   /**
    * Resets for new game
    */
