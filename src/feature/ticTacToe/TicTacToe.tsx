@@ -16,7 +16,7 @@ import { MarkIndicatorData, Nullable, TicTacToeData } from "../../models/models"
 
 import styles from "./TicTacToe.module.scss"
 
-function TicTacToe() {
+const TicTacToe = () => {
   const [user, setUser] = useState<string>(X_MARK)
   const [ticTacArray, setTicTacArray] = useState<TicTacToeData>(Array(9).fill(null))
   const [winner, setWinner] = useState<Nullable<string>>(null)

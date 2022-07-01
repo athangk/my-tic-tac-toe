@@ -11,7 +11,7 @@ interface PlayerProps {
   status: Nullable<string>
 }
 
-function Player({ user, winner, status }: PlayerProps) {
+const Player = ({ user, winner, status }: PlayerProps) => {
   return (
     <div className={`${styles.player_container} ${styles.no_select}`}>
       {status === STATUS_TIE ? (

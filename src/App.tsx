@@ -1,7 +1,7 @@
 import styles from "./App.module.scss"
 import TicTacToe from "./feature/ticTacToe/TicTacToe"
 
-function App() {
+const App: React.FC = () => {
   return (
     <main className={styles.app}>
       <section className={styles.appSection}>

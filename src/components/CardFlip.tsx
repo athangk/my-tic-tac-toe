@@ -11,7 +11,7 @@ interface CardFlipProps {
   winningCell: Nullable<boolean>
 }
 
-function CardFlip({ flip, restart, cellValue, winningCell }: CardFlipProps) {
+const CardFlip = ({ flip, restart, cellValue, winningCell }: CardFlipProps) => {
   return (
     <div className={styles.scene}>
       <div

@@ -16,7 +16,7 @@ interface CellProps {
   handleClick: (num: number) => void
 }
 
-function Cell({ num, cellValue, winningCell, aheadCell, avoidCell, status, handleClick }: CellProps) {
+const Cell = ({ num, cellValue, winningCell, aheadCell, avoidCell, status, handleClick }: CellProps) => {
   const aheadable = aheadCell && !cellValue
   const avoidable = !aheadCell && avoidCell && !cellValue
   const restart = status === STATUS_START

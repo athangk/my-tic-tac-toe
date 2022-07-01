@@ -12,7 +12,7 @@ interface BoardProps {
   handleClick: (num: number) => void
 }
 
-function Board({ ticTacArray, winningCells, aheadCells, avoidCells, status, handleClick }: BoardProps) {
+const Board = ({ ticTacArray, winningCells, aheadCells, avoidCells, status, handleClick }: BoardProps) => {
   return (
     <>
       <div className={styles.grid}>

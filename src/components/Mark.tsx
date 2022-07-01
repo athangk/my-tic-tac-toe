@@ -13,7 +13,7 @@ interface MarkProps {
   size: string
 }
 
-function Mark({ user, size }: MarkProps) {
+const Mark = ({ user, size }: MarkProps) => {
   return (
     <>
       {user === X_MARK ? (
