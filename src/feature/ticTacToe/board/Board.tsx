@@ -22,9 +22,9 @@ const Board = ({ ticTacArray, winningCells, aheadCells, avoidCells, status, hand
             num={i}
             handleClick={handleClick}
             cellValue={ticTacArray[i]}
-            winningCell={winningCells.includes(i) ? true : false}
-            aheadCell={aheadCells.includes(i) ? true : false}
-            avoidCell={avoidCells.includes(i) ? true : false}
+            winningCell={winningCells.includes(i)}
+            aheadCell={aheadCells.includes(i)}
+            avoidCell={avoidCells.includes(i)}
             status={status}
           />
         ))}
